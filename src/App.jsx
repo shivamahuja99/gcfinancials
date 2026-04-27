@@ -1,0 +1,26 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { QuoteProvider } from './hooks/useQuote';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import QuoteFlow from './pages/QuoteFlow';
+import Plans from './pages/Plans';
+
+function App() {
+  return (
+    <QuoteProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quote" element={<QuoteFlow />} />
+            <Route path="/plans" element={<Plans />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </QuoteProvider>
+  );
+}
+
+export default App;
