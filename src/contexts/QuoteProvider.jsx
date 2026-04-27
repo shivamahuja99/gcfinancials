@@ -1,6 +1,5 @@
-import { useState, createContext, useContext } from 'react';
-
-const QuoteContext = createContext();
+import { useState } from 'react';
+import { QuoteContext } from './QuoteContext';
 
 export const QuoteProvider = ({ children }) => {
   const [quoteData, setQuoteData] = useState({
@@ -29,5 +28,3 @@ export const QuoteProvider = ({ children }) => {
     </QuoteContext.Provider>
   );
 };
-
-export const useQuote = () => useContext(QuoteContext);
