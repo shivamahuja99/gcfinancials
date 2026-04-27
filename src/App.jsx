@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { QuoteProvider } from './hooks/useQuote';
+import { QuoteProvider } from './contexts/QuoteProvider';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import QuoteFlow from './pages/QuoteFlow';
