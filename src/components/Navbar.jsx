@@ -12,25 +12,40 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="GC Financials" className="h-24 w-auto object-contain" />
         </Link>
-
-        <div className="hidden md:flex space-x-8">
-          {[
-            { name: 'Solutions', path: '/' },
-            { name: 'Plans', path: '/plans' },
-            { name: 'Services', path: '#' },
-            { name: 'FAQs', path: '#' },
-          ].map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`font-label-md text-label-md transition-all duration-200 hover:text-primary ${isActive(link.path)
-                ? 'text-primary'
-                : 'text-on-surface-variant'
-                }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-8">
+          <Link
+            to="/"
+            className={`font-body-md transition-colors duration-200 ${isActive('/')
+              ? 'text-primary font-medium border-b-2 border-primary pb-1'
+              : 'text-on-surface-variant hover:text-primary'
+              }`}
+          >
+            Solutions
+          </Link>
+          <Link
+            to="/plans"
+            className={`font-body-md transition-colors duration-200 ${isActive('/plans')
+              ? 'text-primary font-medium border-b-2 border-primary pb-1'
+              : 'text-on-surface-variant hover:text-primary'
+              }`}
+          >
+            Quotes
+          </Link>
+          <Link
+            to="/services"
+            className={`font-body-md transition-colors duration-200 ${isActive('/services')
+              ? 'text-primary font-medium border-b-2 border-primary pb-1'
+              : 'text-on-surface-variant hover:text-primary'
+              }`}
+          >
+            Services
+          </Link>
+          <Link
+            to="/services"
+            className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
+          >
+            FAQ
+          </Link>
         </div>
 
         <div className="flex items-center space-x-4">
