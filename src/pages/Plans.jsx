@@ -30,15 +30,15 @@ const Plans = () => {
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Standard liability protection</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">24/7 basic customer support</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Access to standard network</span>
             </li>
           </ul>
@@ -62,19 +62,19 @@ const Plans = () => {
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Comprehensive liability protection</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Priority 24/7 customer support</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Access to premium provider network</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Free annual risk assessment</span>
             </li>
           </ul>
@@ -95,19 +95,19 @@ const Plans = () => {
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">All Premium features included</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Dedicated personal account manager</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Global coverage without limits</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
               <span className="text-body-md font-body-md text-on-surface-variant">Zero deductible on standard claims</span>
             </li>
           </ul>

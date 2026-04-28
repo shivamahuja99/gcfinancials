@@ -1,10 +1,10 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QuoteProvider } from './contexts/QuoteProvider';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import QuoteFlow from './pages/QuoteFlow';
 import Plans from './pages/Plans';
+import ServicesFAQ from './pages/ServicesFAQ';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/quote" element={<QuoteFlow />} />
             <Route path="/plans" element={<Plans />} />
+            <Route path="/services" element={<ServicesFAQ />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Layout>
