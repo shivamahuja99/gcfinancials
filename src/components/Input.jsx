@@ -3,14 +3,14 @@
 const Input = ({ label, error, ...props }) => {
   return (
     <div className="flex flex-col gap-2 w-full">
-      {label && <label className="text-sm font-black text-[#1d1d1f] uppercase tracking-widest ml-1">{label}</label>}
+      {label && <label className="font-label-md text-on-surface-variant ml-1 uppercase tracking-wider text-[11px]">{label}</label>}
       <div className="relative group">
         <input
-          className="w-full px-6 py-4 bg-gray-50/50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all font-semibold text-lg text-[#1d1d1f] placeholder:text-gray-300 group-hover:bg-gray-50"
+          className="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none placeholder:text-outline-variant group-hover:border-outline"
           {...props}
         />
       </div>
-      {error && <p className="text-red-500 text-xs font-bold mt-1 ml-1">{error}</p>}
+      {error && <p className="text-error text-xs font-bold mt-1 ml-1">{error}</p>}
     </div>
   );
 };

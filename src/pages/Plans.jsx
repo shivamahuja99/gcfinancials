@@ -4,22 +4,22 @@ const Plans = () => {
   const [showPreExisting, setShowPreExisting] = useState(false);
 
   return (
-    <div className="flex-grow max-w-container-max mx-auto w-full px-margin-desktop py-section-gap font-body-md">
+    <div className="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-section-gap font-body-md bg-surface text-on-surface">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <h1 className="text-display-xl font-display-xl text-on-surface mb-4">Choose the right plan.</h1>
+        <h1 className="text-display-xl font-display-xl text-on-surface mb-6">Choose the right plan.</h1>
         <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
           Flexible insurance solutions designed to fit your unique needs, delivering comprehensive protection and peace of mind.
         </p>
         <p className="text-caption font-caption text-on-surface-variant/60 mt-4 max-w-xl mx-auto">
-          Plans start from $59/month. Final premium will be calculated after providing full details.
+          Plans start from $29/month. Final premium will be calculated after providing full details.
         </p>
       </div>
 
       {/* Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-end">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
         {/* Basic Plan */}
-        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-surface-variant flex flex-col h-full">
+        <div className="bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-outline-variant/30 flex flex-col hover:shadow-md transition-shadow">
           <div className="mb-8">
             <h3 className="text-headline-md font-headline-md text-on-surface mb-2">Basic</h3>
             <p className="text-body-md font-body-md text-on-surface-variant mb-6">Essential coverage for peace of mind.</p>
@@ -29,27 +29,21 @@ const Plans = () => {
             </div>
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Standard liability protection</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">24/7 basic customer support</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Access to standard network</span>
-            </li>
+            {['Standard liability protection', '24/7 basic customer support', 'Access to standard network'].map((f, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary text-xl">check_circle</span>
+                <span className="text-body-md text-on-surface-variant">{f}</span>
+              </li>
+            ))}
           </ul>
-          <button className="w-full border border-primary text-primary px-4 py-3 rounded-[16px] font-label-md hover:bg-surface-container-low transition-colors duration-200">
+          <button className="w-full border border-primary text-primary px-4 py-4 rounded-xl font-label-md hover:bg-primary/5 transition-colors">
             Select Basic
           </button>
         </div>
 
         {/* Premium Plan (Highlighted) */}
-        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_12px_40px_rgb(0,0,0,0.12)] border-2 border-primary-container relative flex flex-col h-full transform scale-105 z-10">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-caption font-caption font-medium tracking-wide">
+        <div className="bg-surface-container-lowest rounded-2xl p-8 shadow-xl border-2 border-primary-container relative flex flex-col scale-105 z-10">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest">
             MOST POPULAR
           </div>
           <div className="mb-8">
@@ -61,30 +55,20 @@ const Plans = () => {
             </div>
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Comprehensive liability protection</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Priority 24/7 customer support</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Access to premium provider network</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary-container text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Free annual risk assessment</span>
-            </li>
+            {['Comprehensive liability', 'Priority 24/7 support', 'Premium provider network', 'Free annual assessment'].map((f, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary-container text-xl icon-fill">check_circle</span>
+                <span className="text-body-md text-on-surface-variant">{f}</span>
+              </li>
+            ))}
           </ul>
-          <button className="w-full bg-primary-container text-on-primary-container px-4 py-3 rounded-[16px] font-label-md hover:bg-primary-container/90 transition-colors duration-200 shadow-sm">
+          <button className="w-full bg-primary-container text-on-primary-container px-4 py-4 rounded-xl font-label-md hover:opacity-90 transition-opacity shadow-lg shadow-primary-container/20">
             Select Premium
           </button>
         </div>
 
         {/* Ultimate Plan */}
-        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-surface-variant flex flex-col h-full">
+        <div className="bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-outline-variant/30 flex flex-col hover:shadow-md transition-shadow">
           <div className="mb-8">
             <h3 className="text-headline-md font-headline-md text-on-surface mb-2">Ultimate</h3>
             <p className="text-body-md font-body-md text-on-surface-variant mb-6">Maximum coverage for complete security.</p>
@@ -94,24 +78,14 @@ const Plans = () => {
             </div>
           </div>
           <ul className="space-y-4 mb-8 flex-grow">
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">All Premium features included</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Dedicated personal account manager</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Global coverage without limits</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-primary text-[20px] [font-variation-settings:'FILL'_1]">check_circle</span>
-              <span className="text-body-md font-body-md text-on-surface-variant">Zero deductible on standard claims</span>
-            </li>
+            {['All Premium features', 'Personal account manager', 'Global coverage', 'Zero deductible'].map((f, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary text-xl">check_circle</span>
+                <span className="text-body-md text-on-surface-variant">{f}</span>
+              </li>
+            ))}
           </ul>
-          <button className="w-full border border-primary text-primary px-4 py-3 rounded-[16px] font-label-md hover:bg-surface-container-low transition-colors duration-200">
+          <button className="w-full border border-primary text-primary px-4 py-4 rounded-xl font-label-md hover:bg-primary/5 transition-colors">
             Select Ultimate
           </button>
         </div>
@@ -130,21 +104,19 @@ const Plans = () => {
             <div className="bg-surface-container-high p-1 rounded-full inline-flex border border-surface-variant/50">
               <button
                 onClick={() => setShowPreExisting(false)}
-                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${
-                  !showPreExisting
-                    ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
-                    : 'text-on-surface-variant hover:text-on-surface'
-                }`}
+                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${!showPreExisting
+                  ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
+                  : 'text-on-surface-variant hover:text-on-surface'
+                  }`}
               >
                 No Pre-existing Conditions
               </button>
               <button
                 onClick={() => setShowPreExisting(true)}
-                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${
-                  showPreExisting
-                    ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
-                    : 'text-on-surface-variant hover:text-on-surface'
-                }`}
+                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${showPreExisting
+                  ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
+                  : 'text-on-surface-variant hover:text-on-surface'
+                  }`}
               >
                 Stable Pre-existing Conditions
               </button>
