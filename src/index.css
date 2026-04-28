@@ -70,6 +70,8 @@
   --spacing-unit: 8px;
   --spacing-margin-desktop: 40px;
 
+  --shadow-ambient: 0 20px 40px -10px rgba(0,0,0,0.08), 0 10px 20px -5px rgba(0,0,0,0.04);
+
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
 
