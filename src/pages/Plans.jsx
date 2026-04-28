@@ -1,79 +1,226 @@
-
-import { Link } from 'react-router-dom';
-import { useQuote } from '../hooks/useQuote';
-import { getPlans } from '../quotation-logic/quoteEngine';
-import { calculateDays, formatCurrency } from '../utils/dateUtils';
-import { Check, Info, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
 
 const Plans = () => {
-  const { quoteData } = useQuote();
-  const duration = calculateDays(quoteData.startDate, quoteData.endDate);
-  const plans = getPlans({
-    age: parseInt(quoteData.age) || 60,
-    durationInDays: duration,
-    hasPreExisting: quoteData.hasPreExisting
-  });
+  const [showPreExisting, setShowPreExisting] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
-      <div className="text-center mb-20 max-w-3xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-black text-[#1d1d1f] mb-6 tracking-tight">Customized Plans</h1>
-        <p className="text-xl text-[#86868b] font-medium leading-relaxed">
-          Showing best available rates for a traveler aged <span className="text-primary font-bold">{quoteData.age || 60}</span> for <span className="text-primary font-bold">{duration} days</span>.
+    <div className="flex-grow max-w-container-max mx-auto w-full px-margin-desktop py-section-gap font-body-md">
+      {/* Header Section */}
+      <div className="text-center mb-16">
+        <h1 className="text-display-xl font-display-xl text-on-surface mb-4">Choose the right plan.</h1>
+        <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Flexible insurance solutions designed to fit your unique needs, delivering comprehensive protection and peace of mind.
+        </p>
+        <p className="text-caption font-caption text-on-surface-variant/60 mt-4 max-w-xl mx-auto">
+          Plans start from $59/month. Final premium will be calculated after providing full details.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {plans.map(plan => (
-          <div key={plan.id} className={`card group flex flex-col border-none shadow-2xl shadow-black/5 transition-all duration-500 hover:-translate-y-3 ${plan.popular ? 'ring-4 ring-primary ring-offset-4 relative' : ''}`}>
-            {plan.popular && (
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest shadow-xl">
-                Recommended
-              </div>
-            )}
-            <div className="mb-10">
-              <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck className="h-5 w-5 text-primary" />
-                <span className="text-xs font-black text-primary uppercase tracking-widest">{plan.provider}</span>
-              </div>
-              <h3 className="text-3xl font-black text-[#1d1d1f] mb-6">{plan.name}</h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-black text-[#1d1d1f]">{formatCurrency(plan.totalPremium)}</span>
-                <span className="text-[#86868b] font-bold">total</span>
-              </div>
-              <p className="text-[#86868b] font-medium mt-2">{formatCurrency(plan.dailyPremium)} / day</p>
-            </div>
-
-            <div className="space-y-5 mb-12 flex-grow">
-              {['Emergency Medical', 'Repatriation', 'Hospitalization'].map((feature, i) => (
-                <div key={i} className="flex items-center gap-4 group/item">
-                  <div className="bg-green-50 text-green-500 p-1.5 rounded-lg group-hover/item:bg-green-500 group-hover/item:text-white transition-colors">
-                    <Check className="h-4 w-4 stroke-[3px]" />
-                  </div>
-                  <span className="text-lg font-semibold text-[#1d1d1f]/80">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <button className={`w-full py-5 rounded-2xl font-black text-lg transition-all duration-300 ${plan.popular ? 'bg-primary text-white shadow-xl shadow-blue-500/30 hover:scale-[1.02]' : 'bg-gray-50 text-[#1d1d1f] hover:bg-gray-100'}`}>
-              Select Plan
-            </button>
-            <div className="mt-6 flex items-center justify-center gap-2 text-[#86868b] hover:text-primary transition-colors cursor-pointer group/link">
-              <Info className="h-4 w-4" />
-              <span className="text-sm font-bold uppercase tracking-widest">Policy Details</span>
+      {/* Pricing Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-end">
+        {/* Basic Plan */}
+        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-surface-variant flex flex-col h-full">
+          <div className="mb-8">
+            <h3 className="text-headline-md font-headline-md text-on-surface mb-2">Basic</h3>
+            <p className="text-body-md font-body-md text-on-surface-variant mb-6">Essential coverage for peace of mind.</p>
+            <div className="flex items-baseline gap-1 mb-2">
+              <span className="text-headline-lg font-headline-lg text-on-surface">$29</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">/mo</span>
             </div>
           </div>
-        ))}
+          <ul className="space-y-4 mb-8 flex-grow">
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Standard liability protection</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">24/7 basic customer support</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Access to standard network</span>
+            </li>
+          </ul>
+          <button className="w-full border border-primary text-primary px-4 py-3 rounded-[16px] font-label-md hover:bg-surface-container-low transition-colors duration-200">
+            Select Basic
+          </button>
+        </div>
+
+        {/* Premium Plan (Highlighted) */}
+        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_12px_40px_rgb(0,0,0,0.12)] border-2 border-primary-container relative flex flex-col h-full transform scale-105 z-10">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-caption font-caption font-medium tracking-wide">
+            MOST POPULAR
+          </div>
+          <div className="mb-8">
+            <h3 className="text-headline-md font-headline-md text-on-surface mb-2">Premium</h3>
+            <p className="text-body-md font-body-md text-on-surface-variant mb-6">Enhanced protection with added benefits.</p>
+            <div className="flex items-baseline gap-1 mb-2">
+              <span className="text-headline-lg font-headline-lg text-on-surface">$59</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">/mo</span>
+            </div>
+          </div>
+          <ul className="space-y-4 mb-8 flex-grow">
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Comprehensive liability protection</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Priority 24/7 customer support</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Access to premium provider network</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary-container text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Free annual risk assessment</span>
+            </li>
+          </ul>
+          <button className="w-full bg-primary-container text-on-primary-container px-4 py-3 rounded-[16px] font-label-md hover:bg-primary-container/90 transition-colors duration-200 shadow-sm">
+            Select Premium
+          </button>
+        </div>
+
+        {/* Ultimate Plan */}
+        <div className="bg-surface-container-lowest rounded-[16px] p-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-surface-variant flex flex-col h-full">
+          <div className="mb-8">
+            <h3 className="text-headline-md font-headline-md text-on-surface mb-2">Ultimate</h3>
+            <p className="text-body-md font-body-md text-on-surface-variant mb-6">Maximum coverage for complete security.</p>
+            <div className="flex items-baseline gap-1 mb-2">
+              <span className="text-headline-lg font-headline-lg text-on-surface">$99</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">/mo</span>
+            </div>
+          </div>
+          <ul className="space-y-4 mb-8 flex-grow">
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">All Premium features included</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Dedicated personal account manager</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Global coverage without limits</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-[20px] font-[variation-settings:'FILL'_1]">check_circle</span>
+              <span className="text-body-md font-body-md text-on-surface-variant">Zero deductible on standard claims</span>
+            </li>
+          </ul>
+          <button className="w-full border border-primary text-primary px-4 py-3 rounded-[16px] font-label-md hover:bg-surface-container-low transition-colors duration-200">
+            Select Ultimate
+          </button>
+        </div>
       </div>
 
-      <div className="mt-24 p-12 bg-white rounded-[3rem] shadow-2xl shadow-black/5 flex flex-col md:flex-row items-center justify-between gap-10">
-        <div className="max-w-xl">
-          <h4 className="text-3xl font-black text-[#1d1d1f] mb-4">Need to adjust?</h4>
-          <p className="text-lg text-[#86868b] font-medium leading-relaxed">Modify your traveler details or dates to see updated pricing and options instantly.</p>
+      {/* Super Visa Insurance Rates Table */}
+      <div className="mt-24 max-w-4xl mx-auto">
+        <div className="mb-8 text-center">
+          <h2 className="text-headline-md font-headline-md text-on-surface mb-4">Super Visa Insurance Rates</h2>
+          <p className="text-body-lg font-body-lg text-on-surface-variant mb-8">
+            The following table displays estimated premium rates for our standard Super Visa insurance plan. Final rates may vary based on specific medical history, pre-existing conditions, and exact trip duration.
+          </p>
+
+          {/* Toggle Switch */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-surface-container-high p-1 rounded-full inline-flex border border-surface-variant/50">
+              <button
+                onClick={() => setShowPreExisting(false)}
+                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${
+                  !showPreExisting
+                    ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
+                    : 'text-on-surface-variant hover:text-on-surface'
+                }`}
+              >
+                No Pre-existing Conditions
+              </button>
+              <button
+                onClick={() => setShowPreExisting(true)}
+                className={`px-6 py-2.5 rounded-full text-label-md font-label-md font-medium transition-all duration-200 ${
+                  showPreExisting
+                    ? 'bg-surface-container-lowest shadow-sm text-on-surface border border-surface-variant/30'
+                    : 'text-on-surface-variant hover:text-on-surface'
+                }`}
+              >
+                Stable Pre-existing Conditions
+              </button>
+            </div>
+          </div>
         </div>
-        <Link to="/quote" className="btn-secondary px-10 py-5 rounded-2xl min-w-[200px]">
-          Edit Details
-        </Link>
+
+        <div className="overflow-x-auto rounded-[16px] border border-surface-variant shadow-sm bg-surface-container-lowest">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-surface-container-low border-b border-surface-variant">
+                <th className="p-6 text-label-md font-label-md text-on-surface-variant font-medium">Age Bracket</th>
+                <th className="p-6 text-label-md font-label-md text-on-surface-variant font-medium">$100,000 Coverage</th>
+                <th className="p-6 text-label-md font-label-md text-on-surface-variant font-medium">$150,000 Coverage</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-surface-variant text-body-md font-body-md text-on-surface">
+              {(!showPreExisting ? [
+                { age: "40-44", c100: "$85/mo", c150: "$115/mo" },
+                { age: "45-49", c100: "$95/mo", c150: "$130/mo" },
+                { age: "50-54", c100: "$110/mo", c150: "$150/mo" },
+                { age: "55-59", c100: "$135/mo", c150: "$185/mo" },
+                { age: "60-64", c100: "$170/mo", c150: "$235/mo" },
+                { age: "65-69", c100: "$220/mo", c150: "$305/mo" },
+                { age: "70-74", c100: "$295/mo", c150: "$410/mo" },
+                { age: "75-79", c100: "$415/mo", c150: "$580/mo" },
+                { age: "80-84", c100: "$610/mo", c150: "$850/mo" },
+                { age: "85+", c100: "$920/mo", c150: "$1,280/mo" },
+              ] : [
+                { age: "40-44", c100: "$115/mo", c150: "$155/mo" },
+                { age: "45-49", c100: "$125/mo", c150: "$170/mo" },
+                { age: "50-54", c100: "$145/mo", c150: "$195/mo" },
+                { age: "55-59", c100: "$175/mo", c150: "$240/mo" },
+                { age: "60-64", c100: "$220/mo", c150: "$305/mo" },
+                { age: "65-69", c100: "$285/mo", c150: "$395/mo" },
+                { age: "70-74", c100: "$385/mo", c150: "$530/mo" },
+                { age: "75-79", c100: "$540/mo", c150: "$750/mo" },
+                { age: "80-84", c100: "$790/mo", c150: "$1,100/mo" },
+                { age: "85+", c100: "$1,195/mo", c150: "$1,660/mo" },
+              ]).map((row, i) => (
+                <tr key={i} className="hover:bg-surface-container-low/50 transition-colors">
+                  <td className="p-6">{row.age}</td>
+                  <td className="p-6">{row.c100}</td>
+                  <td className="p-6">{row.c150}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Trust Indicators */}
+      <div className="mt-24 border-t border-surface-variant pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-surface-container-low rounded-full flex items-center justify-center mb-4">
+              <span className="material-symbols-outlined text-primary text-[32px]">bolt</span>
+            </div>
+            <h4 className="text-body-lg font-headline-md text-on-surface mb-2">15-Min Claim Approval</h4>
+            <p className="text-body-md font-body-md text-on-surface-variant">Experience lightning-fast processing for eligible claims, getting you back on track sooner.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-surface-container-low rounded-full flex items-center justify-center mb-4">
+              <span className="material-symbols-outlined text-primary text-[32px]">public</span>
+            </div>
+            <h4 className="text-body-lg font-headline-md text-on-surface mb-2">Global Worldwide Coverage</h4>
+            <p className="text-body-md font-body-md text-on-surface-variant">Travel with confidence knowing you're protected anywhere in the world, 24/7.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-surface-container-low rounded-full flex items-center justify-center mb-4">
+              <span className="material-symbols-outlined text-primary text-[32px]">support_agent</span>
+            </div>
+            <h4 className="text-body-lg font-headline-md text-on-surface mb-2">Expert Human Support</h4>
+            <p className="text-body-md font-body-md text-on-surface-variant">Connect directly with licensed professionals, not bots, whenever you need assistance.</p>
+          </div>
+        </div>
       </div>
     </div>
   );

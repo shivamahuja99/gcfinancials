@@ -1,47 +1,55 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <nav className="bg-white/70 backdrop-blur-lg sticky top-0 w-full z-50 border-b border-slate-200/50 shadow-sm font-inter antialiased tracking-tight">
-      <div className="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold text-slate-900">
+    <nav className="bg-white/70 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-surface-variant shadow-sm px-8 py-4 font-inter antialiased tracking-tight">
+      <div className="max-w-container-max mx-auto flex items-center justify-between">
+        <Link to="/" className="text-xl font-headline-md text-on-surface">
           InsurPremium
         </Link>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center gap-8">
           <Link
             to="#"
-            className="text-slate-600 font-medium hover:text-blue-600 transition-all duration-200 scale-95 active:scale-90"
+            className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
           >
             Solutions
           </Link>
           <Link
-            to="#"
-            className="text-slate-600 font-medium hover:text-blue-600 transition-all duration-200 scale-95 active:scale-90"
+            to="/plans"
+            className={`font-body-md transition-colors duration-200 ${
+              isActive('/plans')
+                ? 'text-primary font-medium border-b-2 border-primary pb-1'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
           >
             Quotes
           </Link>
           <Link
             to="#"
-            className="text-slate-600 font-medium hover:text-blue-600 transition-all duration-200 scale-95 active:scale-90"
+            className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
           >
             Services
           </Link>
           <Link
             to="#"
-            className="text-slate-600 font-medium hover:text-blue-600 transition-all duration-200 scale-95 active:scale-90"
+            className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
           >
-            FAQs
+            FAQ
           </Link>
         </div>
-        <div className="flex items-center space-x-4">
-          <button className="hidden lg:block text-slate-600 font-medium hover:text-blue-600 transition-all duration-200">
+        <div className="flex items-center gap-4">
+          <button className="text-on-surface-variant font-label-md hover:text-primary transition-colors duration-200">
             Log In
           </button>
           <Link
             to="/quote"
-            className="bg-primary-container text-on-primary-container font-label-md px-6 py-2 rounded-full hover:opacity-90 transition-opacity"
+            className="bg-primary-container text-on-primary-container px-4 py-2 rounded-[16px] font-label-md active:scale-95 transition-transform hover:bg-primary-container/90"
           >
-            Get Quote
+            Get Started
           </Link>
         </div>
       </div>
