@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+stitch_designs
 dist
 dist-ssr
 *.local

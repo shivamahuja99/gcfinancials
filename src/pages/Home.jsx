@@ -27,7 +27,7 @@ const Home = () => {
                 </div>
                 <button
                   onClick={() => navigate('/quote')}
-                  className="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-[16px] hover:opacity-90 transition-opacity mt-4"
+                  className="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-[16px] hover:opacity-90 transition-opacity mt-4 active:scale-[0.98] transition-transform"
                   type="button"
                 >
                   Get a Quote
@@ -62,8 +62,8 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center mb-6">
+            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 group">
+              <div className="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-tertiary">flight_takeoff</span>
               </div>
               <h3 className="font-headline-md text-[24px] mb-4">Super Visa</h3>
@@ -75,8 +75,8 @@ const Home = () => {
               </a>
             </div>
             {/* Card 2 */}
-            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6">
+            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 group">
+              <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-primary">luggage</span>
               </div>
               <h3 className="font-headline-md text-[24px] mb-4">Visitor Insurance</h3>
@@ -88,8 +88,8 @@ const Home = () => {
               </a>
             </div>
             {/* Card 3 */}
-            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+            <div className="bg-surface-container-lowest p-[32px] rounded-[20px] ambient-shadow flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 group">
+              <div className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="material-symbols-outlined text-on-secondary-container">local_hospital</span>
               </div>
               <h3 className="font-headline-md text-[24px] mb-4">Medical Insurance</h3>
@@ -104,16 +104,16 @@ const Home = () => {
         </section>
 
         {/* How It Works */}
-        <section className="bg-surface-container py-section-gap">
+        <section className="bg-surface-container py-section-gap overflow-hidden">
           <div className="max-w-7xl mx-auto px-gutter">
             <div className="text-center mb-16">
               <h2 className="font-headline-lg text-headline-lg text-on-surface">Seamless Process</h2>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center relative">
               {/* Connecting Line (Desktop) */}
-              <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -z-10 -translate-y-1/2"></div>
+              <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -z-10 -translate-y-1/2 opacity-30"></div>
               {/* Step 1 */}
-              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10">
+              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10 hover:scale-105 transition-transform">
                 <div className="w-16 h-16 rounded-full bg-surface-container-lowest ambient-shadow flex items-center justify-center mb-6 border border-outline-variant/20">
                   <span className="material-symbols-outlined text-primary-container text-2xl">search</span>
                 </div>
@@ -121,7 +121,7 @@ const Home = () => {
                 <p className="font-body-md text-body-md text-on-surface-variant text-center">Easily review options tailored to your needs.</p>
               </div>
               {/* Step 2 */}
-              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10">
+              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10 hover:scale-105 transition-transform">
                 <div className="w-16 h-16 rounded-full bg-surface-container-lowest ambient-shadow flex items-center justify-center mb-6 border border-outline-variant/20">
                   <span className="material-symbols-outlined text-primary-container text-2xl">draw</span>
                 </div>
@@ -129,7 +129,7 @@ const Home = () => {
                 <p className="font-body-md text-body-md text-on-surface-variant text-center">Complete your application securely online.</p>
               </div>
               {/* Step 3 */}
-              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10">
+              <div className="flex flex-col items-center bg-surface-container p-6 w-full md:w-1/3 z-10 hover:scale-105 transition-transform">
                 <div className="w-16 h-16 rounded-full bg-surface-container-lowest ambient-shadow flex items-center justify-center mb-6 border border-outline-variant/20">
                   <span className="material-symbols-outlined text-primary-container text-2xl">verified_user</span>
                 </div>
@@ -144,8 +144,8 @@ const Home = () => {
         <section className="max-w-5xl mx-auto px-gutter py-section-gap">
           <div className="bg-primary-container rounded-[24px] p-16 text-center ambient-shadow relative overflow-hidden">
             {/* Abstract decorative shapes */}
-            <div className="absolute top-[-50%] left-[-10%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-[-50%] right-[-10%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-[-50%] left-[-10%] w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-[-50%] right-[-10%] w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             <div className="relative z-10 space-y-8">
               <h2 className="font-headline-lg text-headline-lg text-on-primary font-bold">Ready to secure your future?</h2>
               <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">
@@ -153,7 +153,7 @@ const Home = () => {
               </p>
               <button
                 onClick={() => navigate('/quote')}
-                className="bg-surface-container-lowest text-primary-container font-label-md text-label-md px-8 py-4 rounded-[16px] hover:bg-surface-container-low transition-colors shadow-sm"
+                className="bg-surface-container-lowest text-primary-container font-label-md text-label-md px-8 py-4 rounded-[16px] hover:bg-surface-container-low transition-colors shadow-sm active:scale-95 transition-transform"
               >
                 Start a Free Quote
               </button>

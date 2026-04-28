@@ -40,15 +40,15 @@ const ServicesFAQ = () => {
 
       {/* Services Grid */}
       <section className="mb-section-gap">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gutter">
           {/* Service Card 1 */}
           <div className="bg-surface-container-lowest rounded-xl p-[32px] shadow-ambient group cursor-pointer transition-transform hover:-translate-y-1 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-on-primary-fixed">
               <span className="material-symbols-outlined">health_and_safety</span>
             </div>
-            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Health Insurance</h3>
+            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Medical Insurance</h3>
             <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-              Access premium healthcare networks with comprehensive coverage plans tailored to individuals and families.
+              Medical Insurance which covers all eligible emergency medical expenses.
             </p>
             <div className="flex items-center text-primary font-label-md text-label-md">
               Learn more <span className="material-symbols-outlined text-[18px] ml-1 group-hover:translate-x-1 transition-transform">chevron_right</span>
@@ -58,11 +58,11 @@ const ServicesFAQ = () => {
           {/* Service Card 2 */}
           <div className="bg-surface-container-lowest rounded-xl p-[32px] shadow-ambient group cursor-pointer transition-transform hover:-translate-y-1 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-on-primary-fixed">
-              <span className="material-symbols-outlined">directions_car</span>
+              <span className="material-symbols-outlined">flight_takeoff</span>
             </div>
-            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Auto Coverage</h3>
+            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Super Visa Insurance</h3>
             <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-              Robust protection for your vehicles, featuring seamless claims processing and extensive liability coverage.
+              You can purchase Super Visa Medical Insurance in most convenient way. Super Visa Health Insurance provides protection of $100,000 or more to maximum $200,000 of visit to Canada.
             </p>
             <div className="flex items-center text-primary font-label-md text-label-md">
               Learn more <span className="material-symbols-outlined text-[18px] ml-1 group-hover:translate-x-1 transition-transform">chevron_right</span>
@@ -72,11 +72,11 @@ const ServicesFAQ = () => {
           {/* Service Card 3 */}
           <div className="bg-surface-container-lowest rounded-xl p-[32px] shadow-ambient group cursor-pointer transition-transform hover:-translate-y-1 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-on-primary-fixed">
-              <span className="material-symbols-outlined">real_estate_agent</span>
+              <span className="material-symbols-outlined">luggage</span>
             </div>
-            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Real Estate</h3>
+            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Visitor Insurance</h3>
             <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-              Safeguard your most valuable asset with policies covering structural damage, theft, and personal liability.
+              For the excessive medical claims protection we provide the best insurance to Canadian visitors. We have innovative services insurance plans which makes easy for the visitors to understand the need of having an Insurance when they are travelling to Canada.
             </p>
             <div className="flex items-center text-primary font-label-md text-label-md">
               Learn more <span className="material-symbols-outlined text-[18px] ml-1 group-hover:translate-x-1 transition-transform">chevron_right</span>
@@ -86,37 +86,14 @@ const ServicesFAQ = () => {
           {/* Service Card 4 */}
           <div className="bg-surface-container-lowest rounded-xl p-[32px] shadow-ambient group cursor-pointer transition-transform hover:-translate-y-1 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-on-primary-fixed">
-              <span className="material-symbols-outlined">volunteer_activism</span>
+              <span className="material-symbols-outlined">directions_car</span>
             </div>
-            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Life Insurance</h3>
+            <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Travel Insurance</h3>
             <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-              Secure your family's financial future with flexible term and whole life policies designed for long-term peace of mind.
+              Travel insurance is a unique and adaptable insurance product that provides comprehensive emergency medical coverage to visitors of all ages and health conditions visiting Canada.
             </p>
             <div className="flex items-center text-primary font-label-md text-label-md">
               Learn more <span className="material-symbols-outlined text-[18px] ml-1 group-hover:translate-x-1 transition-transform">chevron_right</span>
-            </div>
-          </div>
-
-          {/* Service Card 5 */}
-          <div className="bg-surface-container-lowest rounded-xl p-[32px] shadow-ambient group cursor-pointer transition-transform hover:-translate-y-1 duration-300 md:col-span-2 lg:col-span-2 flex flex-col md:flex-row gap-8 items-center text-left">
-            <div className="flex-1">
-              <div className="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center mb-6 text-on-tertiary-fixed">
-                <span className="material-symbols-outlined">business_center</span>
-              </div>
-              <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Commercial Enterprise</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                Customized risk management portfolios for businesses of all sizes, protecting against liability, property loss, and operational interruptions.
-              </p>
-              <div className="flex items-center text-primary font-label-md text-label-md">
-                Explore commercial solutions <span className="material-symbols-outlined text-[18px] ml-1 group-hover:translate-x-1 transition-transform">chevron_right</span>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 aspect-square rounded-lg bg-surface-container overflow-hidden">
-              <img
-                alt="Modern corporate office interior"
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuChe_JmkuFsso5bk3pUlbKUYJmQ8LIIsPkmTO-nyBYdNBVv9_FNkR-f88h4quVjSRSekVueob-f6nSgG90xLvmNZVr6kKJcX74U3nYLEOAg2lGyjKETQVn-1W1SZxeHDtmoXy01QeKAoWzMCAilyx9PNK1iYOK-NHp5g0-UKGxeXzG7pMVHrBm4m8evfj2qZqMZT4jMhwlWf3BQL8jArt6mj_LZMgRWiFtrz4HSP1WIN4iPxsxm02XOs7uBpNIb8KePyruWKLkVOZQ"
-              />
             </div>
           </div>
         </div>
@@ -128,7 +105,7 @@ const ServicesFAQ = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="flex flex-col gap-6">
             <p className="font-body-lg text-body-lg text-on-surface italic">
-              "Switching to InsurPremium was the smartest financial decision I made this year. The clarity of their policies and the speed of their claims process is unmatched in the industry."
+              "Switching to GC Financials was the smartest financial decision I made this year. The clarity of their policies and the speed of their claims process is unmatched in the industry."
             </p>
             <div className="flex items-center gap-4 mt-auto">
               <img
@@ -162,7 +139,7 @@ const ServicesFAQ = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="max-w-4xl mx-auto">
+      <section id="faq" className="max-w-4xl mx-auto">
         <h2 className="font-headline-lg text-headline-lg text-on-surface mb-12">Frequently Asked Questions</h2>
         <div className="divide-y divide-outline-variant">
           {faqItems.map((item, index) => (

@@ -2,28 +2,29 @@ import { useState } from 'react';
 import { QuoteContext } from './QuoteContext';
 
 export const QuoteProvider = ({ children }) => {
-  const [quoteData, setQuoteData] = useState({
+  const initialQuoteData = {
     age: '',
-    startDate: '',
-    endDate: '',
-    duration: 365,
-    coverageAmount: '100k',
-    deductible: '0',
-    hasPreExisting: false,
-    medicalConditions: [],
-    firstName: '',
-    lastName: '',
-    email: '',
+    gender: '',
+    healthStatus: '',
     phone: '',
-    selectedPlan: null,
-  });
+    countryOrigin: '',
+    province: '',
+    coverageAmount: '',
+    medicalConditions: '',
+  };
+
+  const [quoteData, setQuoteData] = useState(initialQuoteData);
 
   const updateQuoteData = (newData) => {
     setQuoteData(prev => ({ ...prev, ...newData }));
   };
 
+  const resetQuoteData = () => {
+    setQuoteData(initialQuoteData);
+  };
+
   return (
-    <QuoteContext.Provider value={{ quoteData, updateQuoteData }}>
+    <QuoteContext.Provider value={{ quoteData, updateQuoteData, resetQuoteData }}>
       {children}
     </QuoteContext.Provider>
   );
