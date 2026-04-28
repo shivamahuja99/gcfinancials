@@ -41,7 +41,7 @@ const Navbar = () => {
             Services
           </Link>
           <Link
-            to="/services"
+            to="/services#faq"
             className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
           >
             FAQ
@@ -49,9 +49,6 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button className="hidden lg:block text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-200">
-            Log In
-          </button>
           <Link
             to="/quote"
             className="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity active:scale-95 duration-200 shadow-sm"
