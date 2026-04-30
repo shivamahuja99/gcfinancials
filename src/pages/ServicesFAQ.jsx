@@ -162,7 +162,7 @@ const ServicesFAQ = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="max-w-4xl mx-auto">
+      <section id="faq" className="max-w-4xl mx-auto">
         <h2 className="font-headline-lg text-headline-lg text-on-surface mb-12">Frequently Asked Questions</h2>
         <div className="divide-y divide-outline-variant">
           {faqItems.map((item, index) => (

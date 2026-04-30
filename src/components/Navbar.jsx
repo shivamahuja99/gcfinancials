@@ -19,9 +19,9 @@ const Navbar = () => {
             Solutions
           </Link>
           <Link
-            to="/plans"
+            to="/quotation"
             className={`font-body-md transition-colors duration-200 ${
-              isActive('/plans')
+              isActive('/quotation')
                 ? 'text-primary font-medium border-b-2 border-primary pb-1'
                 : 'text-on-surface-variant hover:text-primary'
             }`}
@@ -39,7 +39,7 @@ const Navbar = () => {
             Services
           </Link>
           <Link
-            to="/services"
+            to="/services#faq"
             className="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200"
           >
             FAQ

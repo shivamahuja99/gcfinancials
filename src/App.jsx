@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import QuoteFlow from './pages/QuoteFlow';
 import Plans from './pages/Plans';
 import ServicesFAQ from './pages/ServicesFAQ';
+import Quotation from './pages/Quotation';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/quote" element={<QuoteFlow />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/services" element={<ServicesFAQ />} />
+            <Route path="/quotation" element={<Quotation />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Layout>
