@@ -71,7 +71,7 @@ const QuoteFlow = () => {
     Object.keys(quoteData).forEach(key => {
       formData.append(key, quoteData[key]);
     });
-    formData.append('coverageAmount', quoteData.coverageAmount);
+
 
     try {
       // Simulate sending or use Netlify Forms if deployed
