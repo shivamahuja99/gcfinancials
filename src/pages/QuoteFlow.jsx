@@ -562,7 +562,7 @@ const QuoteFlow = () => {
           </div>
 
           {/* Hidden form for Netlify Forms bot discovery */}
-          <form name="quote-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <form name="quote-request" method="POST" data-netlify="true">
             <input type="text" name="firstName" />
             <input type="text" name="lastName" />
             <input type="email" name="email" />
