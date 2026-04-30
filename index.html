@@ -10,6 +10,23 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Static form for Netlify Bot Discovery -->
+    <form name="quote-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="text" name="insuranceType" />
+      <input type="text" name="age" />
+      <input type="text" name="gender" />
+      <input type="text" name="phone" />
+      <input type="text" name="countryOrigin" />
+      <input type="text" name="province" />
+      <input type="text" name="healthStatus" />
+      <textarea name="medicalConditions"></textarea>
+      <input type="text" name="coverageAmount" />
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
