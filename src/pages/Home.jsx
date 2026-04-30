@@ -20,7 +20,7 @@ const Home = () => {
                 <div>
                   <label className="block font-label-md text-label-md text-on-surface-variant mb-2">Coverage Type</label>
                   <select className="w-full border border-outline-variant rounded-lg p-3 text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors bg-surface-container-lowest">
-                    <option>Super Visa</option>
+                    <option>Super Visa Insurance</option>
                     <option>Visitor Insurance</option>
                     <option>Medical Insurance</option>
                   </select>

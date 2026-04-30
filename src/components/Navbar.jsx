@@ -23,8 +23,8 @@ const Navbar = () => {
             Solutions
           </Link>
           <Link
-            to="/plans"
-            className={`font-body-md transition-colors duration-200 ${isActive('/plans')
+            to="/quote"
+            className={`font-body-md transition-colors duration-200 ${isActive('/quote')
               ? 'text-primary font-medium border-b-2 border-primary pb-1'
               : 'text-on-surface-variant hover:text-primary'
               }`}

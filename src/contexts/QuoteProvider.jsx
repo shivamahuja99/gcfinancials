@@ -3,6 +3,10 @@ import { QuoteContext } from './QuoteContext';
 
 export const QuoteProvider = ({ children }) => {
   const initialQuoteData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    insuranceType: 'Super Visa Insurance',
     age: '',
     gender: '',
     healthStatus: '',
