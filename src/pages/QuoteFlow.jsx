@@ -291,7 +291,7 @@ const QuoteFlow = () => {
             </div>
 
             <div className="space-y-4">
-              <label className="block font-label-md text-on-surface font-bold uppercase tracking-widest text-xs ml-1">Province</label>
+              <label className="block font-label-md text-on-surface font-bold uppercase tracking-widest text-xs ml-1">Province Visiting</label>
               <div className="relative">
                 <select
                   value={quoteData.province}
