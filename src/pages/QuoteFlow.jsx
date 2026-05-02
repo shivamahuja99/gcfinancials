@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useQuote } from '../contexts/QuoteContext';
+import { get_a_free_quote, countries, provinces } from '../utils/constants';
 
 
 const QuoteFlow = () => {
@@ -10,16 +11,6 @@ const QuoteFlow = () => {
   useEffect(() => {
     resetQuoteData();
   }, []);
-
-  const countries = [
-    "Canada", "United States", "United Kingdom", "India", "China", "Australia", "Germany", "France", "Japan", "Brazil", "Mexico", "United Arab Emirates"
-  ];
-
-  const provinces = [
-    "Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador",
-    "Nova Scotia", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan",
-    "Northwest Territories", "Nunavut", "Yukon"
-  ];
 
   const validateStep = (currentStep) => {
     const newErrors = {};
@@ -150,7 +141,7 @@ const QuoteFlow = () => {
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-12">Get a personalized insurance quote in minutes. Transparent pricing, premium coverage.</p>
 
           <div className="bg-surface-container-lowest rounded-3xl p-10 shadow-2xl border border-outline-variant/30 backdrop-blur-sm">
-            <h2 className="font-headline-md text-headline-md text-on-surface mb-8">Get a Quote</h2>
+            <h2 className="font-headline-md text-headline-md text-on-surface mb-8">{get_a_free_quote}</h2>
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -209,7 +200,7 @@ const QuoteFlow = () => {
                 className="w-full bg-primary text-on-primary font-label-md text-label-md py-5 rounded-2xl hover:opacity-90 transition-all shadow-lg mt-4 active:scale-[0.98]"
                 type="button"
               >
-                Calculate Premium
+                {get_a_free_quote}
               </button>
             </div>
           </div>
@@ -399,7 +390,7 @@ const QuoteFlow = () => {
             <h2 className="font-headline-md text-2xl text-on-surface mb-8">Desired Coverage Amount</h2>
             {errors.coverageAmount && <p className="text-error font-label-md mb-4 flex items-center gap-2"><span className="material-symbols-outlined text-sm">error</span>{errors.coverageAmount}</p>}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {['50k', '100k', '250k', '500k', '1M'].map((amount) => (
+              {['100k', '250k', '500k', '1M'].map((amount) => (
                 <button
                   key={amount}
                   onClick={() => updateQuoteData({ coverageAmount: amount })}
@@ -436,7 +427,7 @@ const QuoteFlow = () => {
           onClick={nextStep}
           className="bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg active:scale-95 flex items-center gap-3"
         >
-          Get your Quotation
+          Get Your Free Quotation
           <span className="material-symbols-outlined text-lg">arrow_forward</span>
         </button>
       </div>
@@ -555,7 +546,7 @@ const QuoteFlow = () => {
                 onClick={handleSubmit}
                 className="order-1 sm:order-2 w-full sm:w-auto bg-primary text-on-primary rounded-2xl px-12 py-4 font-bold text-lg shadow-[0_10px_30px_rgba(0,113,227,0.3)] hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-3"
               >
-                Submit Application
+                {get_a_free_quote}
                 <span className="material-symbols-outlined">send</span>
               </button>
             </div>

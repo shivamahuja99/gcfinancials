@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import privacyPolicy from '../assets/privacy_policy_gc_financials.pdf';
+import instagramIcon from '../assets/instagram.png';
 
 const Footer = () => {
   return (
@@ -14,9 +16,14 @@ const Footer = () => {
           <h4 className="font-bold text-slate-900 mb-4">Legal</h4>
           <ul className="space-y-3">
             <li>
-              <Link to="#" className="hover:text-slate-900 transition-colors opacity-80 hover:opacity-100 text-blue-600 font-bold">
+              <a
+                href={privacyPolicy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900 transition-colors opacity-80 hover:opacity-100 text-blue-600 font-bold"
+              >
                 Privacy Policy
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="#" className="hover:text-slate-900 transition-colors opacity-80 hover:opacity-100">
@@ -39,21 +46,30 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-slate-900 mb-4">Contact</h4>
           <ul className="space-y-3">
-            <li>Email: gcfinancials23@gmail.com</li>
-            <li>Phone: 905-296-1039 & 416-884-3537</li>
-            <li className="max-w-xs">Address: unit 201-218 Export Blvd, Mississauga, ON L5S 0A7</li>
+            <li>
+              Email: <a href="mailto:gcfinancials23@gmail.com" className="hover:text-slate-900 transition-colors">gcfinancials23@gmail.com</a>
+            </li>
+            <li>
+              Phone: <a href="tel:9052961039" className="hover:text-slate-900 transition-colors">905-296-1039</a> & <a href="tel:4168843537" className="hover:text-slate-900 transition-colors">416-884-3537</a>
+            </li>
+            <li className="max-w-xs">
+              Address: <a
+                href="https://www.google.com/maps/search/?api=1&query=unit+201-218+Export+Blvd,+Mississauga,+ON+L5S+0A7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-900 transition-colors"
+              >
+                unit 201-218 Export Blvd, Mississauga, ON L5S 0A7
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-bold text-slate-900 mb-4">Follow Us</h4>
           <div className="space-x-4">
-            <a href="https://www.instagram.com/gcfinancials23?igsh=NnU4cmU5Z2Rmdm45" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors opacity-80 hover:opacity-100">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" />
-                <path d="M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="currentColor" />
-              </svg>
+            <a href="https://www.instagram.com/gcfinancials23?igsh=NnU4cmU5Z2Rmdm45" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors opacity-80 hover:opacity-100 block w-fit">
+              <img src={instagramIcon} alt="Instagram" className="w-6 h-6 object-contain" />
             </a>
           </div>
         </div>

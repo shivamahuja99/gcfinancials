@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import { get_a_free_quote } from '../utils/constants';
 const Home = () => {
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const Home = () => {
                   className="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-[16px] hover:opacity-90 transition-opacity mt-4 active:scale-[0.98] transition-transform"
                   type="button"
                 >
-                  Get a Quote
+                  {get_a_free_quote}
                 </button>
               </form>
             </div>
