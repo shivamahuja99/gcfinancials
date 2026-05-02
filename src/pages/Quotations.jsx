@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import TrustedPartner from '../components/TrustedPartners';
+import { get_a_free_quote } from '../utils/constants';
 
 const Quotation = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Quotation = () => {
                             <p className="font-body-lg text-body-lg text-on-surface-variant mb-12">Get a personalized insurance quote in minutes. Transparent pricing, premium coverage.</p>
 
                             <div className="bg-surface-container-lowest rounded-2xl p-[32px] shadow-ambient border border-outline-variant/30">
-                                <h2 className="font-headline-md text-headline-md text-on-surface mb-8">Get a Quote</h2>
+                                <h2 className="font-headline-md text-headline-md text-on-surface mb-8">{get_a_free_quote}</h2>
                                 <form className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
@@ -76,7 +76,7 @@ const Quotation = () => {
                                         className="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-[16px] hover:opacity-90 transition-opacity mt-4 active:scale-[0.98] transition-transform"
                                         type="button"
                                     >
-                                        Calculate Premium
+                                        {get_a_free_quote}
                                     </button>
                                 </form>
                             </div>

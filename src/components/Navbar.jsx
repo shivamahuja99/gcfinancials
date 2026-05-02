@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/gc_financials_logo.png';
+import { get_a_free_quote } from '../utils/constants';
 
 const Navbar = () => {
   const location = useLocation();
@@ -53,7 +54,7 @@ const Navbar = () => {
             to="/quote"
             className="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity active:scale-95 duration-200 shadow-sm"
           >
-            Get Quote
+            {get_a_free_quote}
           </Link>
         </div>
       </div>
