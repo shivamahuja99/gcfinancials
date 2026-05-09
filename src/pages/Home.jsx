@@ -1,5 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { get_a_free_quote } from '../utils/constants';
+import IA from '../assets/IA.png';
+import Equitable from '../assets/equitable.png';
+import sunlife from '../assets/sunlife.png';
+import manulife from '../assets/Manulife.png';
+import canada_life from '../assets/Canada_life.png';
+import twentyOneCentury from '../assets/21_century.png';
+import travelance from '../assets/travelance.svg';
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -46,12 +54,28 @@ const Home = () => {
 
         {/* Trust Bar */}
         <section className="border-y border-outline-variant/30 bg-surface-container-low py-12">
-          <div className="max-w-7xl mx-auto px-gutter flex flex-wrap justify-center gap-12 lg:gap-24 opacity-60 grayscale">
-            <div className="font-headline-md text-headline-md text-on-surface-variant tracking-widest font-bold">MetLife</div>
-            <div className="font-headline-md text-headline-md text-on-surface-variant tracking-widest font-bold">Allianz</div>
-            <div className="font-headline-md text-headline-md text-on-surface-variant tracking-widest font-bold">Prudential</div>
-            <div className="font-headline-md text-headline-md text-on-surface-variant tracking-widest font-bold">AIG</div>
-            <div className="font-headline-md text-headline-md text-on-surface-variant tracking-widest font-bold">AXA</div>
+          <div className="max-w-7xl mx-auto px-gutter flex flex-nowrap overflow-x-auto md:overflow-visible md:flex-wrap md:justify-center items-center gap-8 lg:gap-12 pb-4 md:pb-0 no-scrollbar">
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={IA} alt="IA" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={Equitable} alt="equitable" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={sunlife} alt="sunlife" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={canada_life} alt="canada_life" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={twentyOneCentury} alt="twentyOneCentury" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={travelance} alt="travelance" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-8 md:h-10 flex-shrink-0 flex items-center justify-center">
+              <img src={manulife} alt="manulife" className="h-full w-auto object-contain" />
+            </div>
           </div>
         </section>
 
