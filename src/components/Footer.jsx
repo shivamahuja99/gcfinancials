@@ -84,7 +84,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:text-slate-900 transition-colors leading-relaxed block"
                   >
-                    unit 201-218 Export Blvd<br />Mississauga, ON L5S 0A7
+                    Suit 201 - 218 export blvd <br />Mississauga, ON L5S 0A7
                   </a>
                 </div>
                 <div>
@@ -95,7 +95,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:text-slate-900 transition-colors leading-relaxed block"
                   >
-                    1122 international Blvd, suite 700, <br />Burlington L7L 6W6
+                    Suit 700 - 1122 international blvd <br />Burlington, ON L7L 6W6
                   </a>
                 </div>
               </div>
